@@ -1,32 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ru-tE-MiA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Collection View Controller Niveles-->
         <scene sceneID="k0a-3G-yKK">
             <objects>
-                <collectionViewController id="NWP-a5-w7t" sceneMemberID="viewController">
+                <collectionViewController id="NWP-a5-w7t" customClass="CollectionViewControllerNiveles" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fOi-HX-2SG">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H82-Ox-fA6">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="H82-Ox-fA6">
+                            <size key="itemSize" width="55" height="60"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZdM-Bf-Xwi">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZdM-Bf-Xwi" customClass="nivelCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="55" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VAX-I5-eR1">
+                                            <rect key="frame" x="0.0" y="0.0" width="55" height="60"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nivel 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KF5-fA-rbI">
+                                            <rect key="frame" x="1" y="39" width="53" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
+                                    <outlet property="imgNivel" destination="VAX-I5-eR1" id="HiK-yI-Ndd"/>
+                                    <outlet property="lblNivel" destination="KF5-fA-rbI" id="4rV-RB-tVb"/>
                                     <segue destination="F5h-SQ-d6O" kind="showDetail" id="2J4-5G-r1s"/>
                                 </connections>
                             </collectionViewCell>
@@ -47,7 +60,7 @@
         <!--View Controller-->
         <scene sceneID="5C2-VN-7yQ">
             <objects>
-                <viewController id="F5h-SQ-d6O" sceneMemberID="viewController">
+                <viewController id="F5h-SQ-d6O" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GUq-b2-89d"/>
                         <viewControllerLayoutGuide type="bottom" id="9Rn-th-fJc"/>
@@ -313,6 +326,15 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnAtras" destination="b3J-8H-gcB" id="uwr-sF-6H1"/>
+                        <outlet property="btnListo" destination="TiU-8d-xV9" id="vze-Wg-j6H"/>
+                        <outlet property="figurasBaseCollection" destination="X5g-2e-JoF" id="FH1-J9-0Vv"/>
+                        <outlet property="imgGrande" destination="DPQ-0U-9jg" id="eZ9-iz-HHX"/>
+                        <outlet property="imgPequena" destination="RJY-i4-tEn" id="w4X-gf-qIt"/>
+                        <outlet property="lblNivel" destination="vVK-Kj-otZ" id="CU5-7O-5tX"/>
+                        <outlet property="lblVidas" destination="q2T-Gk-9oG" id="y3v-mC-JSx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4y2-5L-av4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,6 +362,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1.jpg" width="437" height="424"/>
         <image name="1.png" width="200" height="200"/>
         <image name="10.png" width="200" height="201"/>
         <image name="11.png" width="200" height="201"/>

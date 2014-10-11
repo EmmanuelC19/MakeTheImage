@@ -10,6 +10,17 @@
 
 @interface ViewController : UIViewController
 
+#pragma mark Instancias
+
+
+@property (weak, nonatomic) IBOutlet UICollectionView *figurasBaseCollection;
+@property (weak, nonatomic) IBOutlet UILabel *lblNivel;
+@property (weak, nonatomic) IBOutlet UILabel *lblVidas;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPequena;
+@property (weak, nonatomic) IBOutlet UIImageView *imgGrande;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnAtras;
+@property (weak, nonatomic) IBOutlet UIButton *btnListo;
 
 @end
 
